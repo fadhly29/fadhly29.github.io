@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fadhly Mahdhy | Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+  /* Animasi Umum */
+  @keyframes fade-in {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+
+  </style>
+</head>
+<body class="bg-gray-800 text-white">
+
+  <!-- Header -->
+  <header class="bg-gray-900 shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">Fadhly Mahdhy</h1>
+      <nav class="space-x-4 text-sm font-medium hidden md:flex">
+        <a href="#about" class="hover:text-[#A5D8FF]">About</a>
+        <a href="#skills" class="hover:text-[#B2F2BB]">Skills</a>
+        <a href="#projects" class="hover:text-[#D0BFFF]">Portfolio</a>
+        <a href="#contact" class="hover:text-[#A5D8FF]">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-20 text-center bg-gray-800" data-aos="fade-up">
+    <img 
+      src="profile.jpg" 
+      alt="Fadhly Mahdhy's Photo" 
+      class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-lg ring-4 ring-[#A5D8FF]"
+    />
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#A5D8FF] ">Hello, My name is Fadhly</h2>
+    <p class="text-lg text-gray-300 max-w-xl mx-auto px-4">
+        "Behind every click that feels instant, there are lines of logic that crafted in silence.""
+    </p>
+  </section>
+
+  <!-- Tentang -->
+  <section id="about" class="py-16 bg-gray-700" data-aos="fade-in">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-2xl font-semibold mb-4 text-[#B2F2BB]">About Me</h3>
+      <p class="text-gray-200 leading-relaxed">
+        A Software Engineer with over 6 years of experience in the fintech and banking industry.  
+        I specialize in backend development, APIs, and developing large-scale financial systems using technologies such as C# .NET Framework & .NET Core, SQL Server, and PostgreSQL.  
+        I’m also familiar with Windows Server environments and cloud platforms like Microsoft Azure.  
+        I believe in writing clean code, designing scalable architectures, and building modular applications that are easy to maintain and evolve.
+      </p>
+    </div>
+  </section>
+
+  <!-- Keahlian -->
+  <section id="skills" class="py-16 bg-gray-800" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-2xl font-semibold mb-6 text-[#D0BFFF]">Skills</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-gray-100">
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">C# .NET Framework & .NET Core</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">PHP (Native, CI, Laravel)</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">SQL Server</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">PostgreSQL</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">HTML, CSS, & JS</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">Git</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">ISO8583 Messaging</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">SNAP</div>
+        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">NSICCS Banking</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="py-16 bg-gray-700" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-2xl font-semibold mb-6 text-[#D0BFFF]">Resume</h3>
+      <div class="space-y-6 text-left">
+        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
+          <h4 class="text-xl font-bold text-[#B2F2BB]">Experience</h4>
+          <ul class="text-gray-200 mt-4 list-disc pl-6">
+            <li>Juli 2018 - Present: <i>Software Engineer</i> at <b>PT. Arranet Indonesia Sejahtera</b></li>
+            <li>Des 2017 - Mar 2018: <i>Internship Web Developer</i> at <b>PT. Blu Data</b></li>
+            <li>2014 - 2017: <i>Freelance Web Developer</i> by <b>Self-Employed or with my friends/teams</b> working some freelance project using PHP Native and Laravel.</li>
+          </ul>
+        </div>
+        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
+          <h4 class="text-xl font-bold text-[#D0BFFF]">Education</h4>
+          <ul class="text-gray-200 mt-4 list-disc pl-6">
+            <li>2018: <i>Bachelor of Computer Science</i>, <b>Budi Luhur University</b></li>
+            <li>2014: <i>Graduated Software Engineer</i>, <b>SMK Bina Informatika</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section id="projects" class="py-16 bg-gray-700" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-2xl font-semibold mb-6 text-[#A5D8FF]">Portfolio & Projects</h3>
+      <div class="space-y-6">
+        <h2>Some Works at PT. Arranet Indonesia Sejahtera</h2>
+        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
+          <h4 class="text-xl font-bold text-[#B2F2BB]">PPOB Biller API Services (On Demand)</h4>
+          <p class="text-gray-200 mt-2">Realtime Backend APIs using C# .NET Framework with messaging ISO8583 & JSON</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
+          <h4 class="text-xl font-bold text-[#D0BFFF]">API For Mini ATM Banking Devices (ESA)</h4>
+          <p class="text-gray-200 mt-2">This system includes Terminal Management for managing devices such as block, activation, Whitelist Serial Number Devices, Master Key and Walking Session Key Management, Translating Pinblock, Translating JSON into ISO8583 Messaging, Writes transaction log for monitoring. Also this backend API writes transactions to the databases for Mini ATM.</p>
+        </div>
+      </div>
+      <br>
+      <div class="space-y-6">
+        <h2>Some Works at PT. Blu Data</h2>
+        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
+          <h4 class="text-xl font-bold text-[#B2F2BB]">Website Kioskberas.com (2017)</h4>
+          <p class="text-gray-200 mt-2">Making Product Order Website for PT. KIOSKBERAS using PHP, HTML, and CSS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-16 bg-gray-800" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-2xl font-semibold mb-4 text-[#B2F2BB]">Contacts</h3>
+      <p class="text-gray-300 mb-6">Feel free to Contact Me:</p>
+      <a href="mailto:fadhly29@gmail.com" class="inline-block bg-[#A5D8FF] text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-[#74c0fc] transition">
+        fadhly29@gmail.com
+      </a>
+      <a href="https://wa.me/089616049979" class="inline-block bg-[#51CE70] text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-[#72d58b] transition">
+        WhatsApp Me!
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-gray-400 text-sm bg-gray-900">
+    &copy; 2025 Fadhly Mahdhy. Dibuat dengan ❤ dan Tailwind CSS serta pastel vibes ✨
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+</body>
+</html>

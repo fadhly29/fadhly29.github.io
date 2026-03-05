@@ -1,172 +1,844 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fadhly Mahdhy - Software Engineer with 8+ years of experience in fintech and banking industry specializing in backend development and APIs." />
+  <meta name="author" content="Fadhly Mahdhy" />
   <title>Fadhly Mahdhy | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#8B5CF6',
+            accent: '#10B981',
+            dark: '#0F172A',
+            darker: '#020617',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'gradient': 'gradient 8s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    
     body {
       font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
 
-  /* Animasi Umum */
-  @keyframes fade-in {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
-  }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #3B82F6, #8B5CF6);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #2563EB, #7C3AED);
+    }
 
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    /* Gradient Background */
+    .gradient-bg {
+      background: linear-gradient(-45deg, #0F172A, #1e3a5f, #1e293b, #0F172A);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
 
-  .fade-in {
-    animation: fade-in 0.8s ease-out forwards;
-  }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-  .slide-up {
-    animation: slide-up 0.8s ease-out forwards;
-  }
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
 
-  .delay-1 { animation-delay: 0.2s; }
-  .delay-2 { animation-delay: 0.4s; }
-  .delay-3 { animation-delay: 0.6s; }
+    /* Glow Effect */
+    .glow {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+                  0 0 40px rgba(139, 92, 246, 0.3),
+                  0 0 60px rgba(16, 185, 129, 0.2);
+    }
 
+    .glow-hover:hover {
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
+                  0 0 60px rgba(139, 92, 246, 0.4),
+                  0 0 90px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Particle Background */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(59, 130, 246, 0.5);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        bottom: -10px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+      }
+    }
+
+    /* Card Hover Effects */
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Text Gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #3B82F6, #8B5CF6, #10B981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+      transition: left 0.3s ease;
+    }
+    .btn-primary:hover::before {
+      left: 0;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    /* Skill Badge */
+    .skill-badge {
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-badge::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      transform: rotate(45deg);
+      transition: left 0.5s ease;
+    }
+    .skill-badge:hover::before {
+      left: 100%;
+    }
+
+    /* Navigation */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Image */
+    .hero-image-container {
+      position: relative;
+    }
+    .hero-image-container::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, #3B82F6, #8B5CF6, #10B981);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse-slow 3s infinite;
+    }
+
+    /* Section Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3B82F6, transparent);
+    }
+
+    /* Loading Screen */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #020617;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #1e293b;
+      border-top: 4px solid #3B82F6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Typing Effect */
+    .typing-container {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .typing-text {
+      display: inline-block;
+      animation: typing 3s steps(40) infinite alternate;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
   </style>
 </head>
-<body class="bg-gray-800 text-white">
+<body class="bg-darker text-white">
 
-  <!-- Header -->
-  <header class="bg-gray-900 shadow-md">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">Fadhly Mahdhy</h1>
-      <nav class="space-x-4 text-sm font-medium hidden md:flex">
-        <a href="#about" class="hover:text-[#A5D8FF]">About</a>
-        <a href="#skills" class="hover:text-[#B2F2BB]">Skills</a>
-        <a href="#projects" class="hover:text-[#D0BFFF]">Portfolio</a>
-        <a href="#contact" class="hover:text-[#A5D8FF]">Contacts</a>
-      </nav>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-gradient">FM</a>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#about" class="nav-link text-gray-300 hover:text-white transition">About</a>
+          <a href="#skills" class="nav-link text-gray-300 hover:text-white transition">Skills</a>
+          <a href="#resume" class="nav-link text-gray-300 hover:text-white transition">Resume</a>
+          <a href="#projects" class="nav-link text-gray-300 hover:text-white transition">Portfolio</a>
+          <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-white" id="menuBtn">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 h-full w-64 bg-dark/95 backdrop-blur-md md:hidden z-40 shadow-2xl">
+      <div class="p-6 pt-20 flex flex-col space-y-4">
+        <button class="absolute top-4 right-4 text-white" id="closeMenuBtn">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a href="#about" class="mobile-link text-gray-300 hover:text-white transition py-2">About</a>
+        <a href="#skills" class="mobile-link text-gray-300 hover:text-white transition py-2">Skills</a>
+        <a href="#resume" class="mobile-link text-gray-300 hover:text-white transition py-2">Resume</a>
+        <a href="#projects" class="mobile-link text-gray-300 hover:text-white transition py-2">Portfolio</a>
+        <a href="#contact" class="mobile-link text-gray-300 hover:text-white transition py-2">Contact</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="py-20 text-center bg-gray-800" data-aos="fade-up">
-    <img 
-      src="profile.jpg" 
-      alt="Fadhly Mahdhy's Photo" 
-      class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-lg ring-4 ring-[#A5D8FF]"
-    />
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#A5D8FF] ">Hello, My name is Fadhly</h2>
-    <p class="text-lg text-gray-300 max-w-xl mx-auto px-4">
-        "Behind every click that feels instant, there are lines of logic that crafted in silence.""
-    </p>
-  </section>
+  <!-- Hero Section -->
+  <section class="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Animated Background Shapes -->
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 4s;"></div>
 
-  <!-- Tentang -->
-  <section id="about" class="py-16 bg-gray-700" data-aos="fade-in">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-2xl font-semibold mb-4 text-[#B2F2BB]">About Me</h3>
-      <p class="text-gray-200 leading-relaxed">
-        A Software Engineer with over 6 years of experience in the fintech and banking industry.  
-        I specialize in backend development, APIs, and developing large-scale financial systems using technologies such as C# .NET Framework & .NET Core, SQL Server, and PostgreSQL.  
-        I’m also familiar with Windows Server environments and cloud platforms like Microsoft Azure.  
-        I believe in writing clean code, designing scalable architectures, and building modular applications that are easy to maintain and evolve.
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <!-- <div class="hero-image-container mb-8" data-aos="zoom-in" data-aos-duration="1000"> -->
+        <img
+          src="profile.jpg"
+          alt="Fadhly Mahdhy"
+          class="w-40 h-40 md:w-52 md:h-52 rounded-full mx-auto object-cover glow"
+        />
+      <!-- </div> -->
+      
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4" data-aos="fade-up" data-aos-delay="200">
+        Hi, I'm <span class="text-gradient">Fadhly Mahdhy</span>
+      </h1>
+      
+      <div class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6" data-aos="fade-up" data-aos-delay="400">
+        <span class="typing-text">Software Engineer</span>
+      </div>
+      
+      <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="600">
+        <i class="fas fa-quote-left text-primary mr-2"></i>
+        Behind every click that feels instant, there are lines of logic crafted in silence.
+        <i class="fas fa-quote-right text-primary ml-2"></i>
       </p>
+      
+      <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
+        <a href="#projects" class="btn-primary px-8 py-4 rounded-full font-semibold text-white relative z-10">
+          <i class="fas fa-rocket mr-2"></i>View My Work
+        </a>
+        <a href="#contact" class="px-8 py-4 rounded-full font-semibold border-2 border-primary/50 hover:border-primary text-white hover:bg-primary/10 transition">
+          <i class="fas fa-envelope mr-2"></i>Get In Touch
+        </a>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex justify-center gap-6 mt-12" data-aos="fade-up" data-aos-delay="1000">
+        <a href="https://github.com/fadhly29" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-125">
+          <i class="fab fa-github text-3xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/fadhly29" target="_blank" class="text-gray-400 hover:text-blue-500 transition transform hover:scale-125">
+          <i class="fab fa-linkedin text-3xl"></i>
+        </a>
+        <a href="mailto:fadhly29@gmail.com" class="text-gray-400 hover:text-red-400 transition transform hover:scale-125">
+          <i class="fas fa-envelope text-3xl"></i>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2" data-aos="fade-up" data-aos-delay="1200">
+        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Keahlian -->
-  <section id="skills" class="py-16 bg-gray-800" data-aos="fade-up">
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-gradient">About Me</span>
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            A <span class="text-primary font-semibold">Software Engineer</span> with over 
+            <span class="text-accent font-semibold">8 years</span> of experience in the fintech and banking industry.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            I specialize in <span class="text-secondary font-semibold">backend development</span>, 
+            <span class="text-secondary font-semibold">APIs</span>, and developing large-scale financial systems 
+            using technologies such as C# .NET Framework & .NET Core, SQL Server, and PostgreSQL.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            I'm also familiar with Windows Server environments and cloud platforms like Microsoft Azure.
+            I believe in writing clean code, designing scalable architectures, and building modular applications 
+            that are easy to maintain and evolve.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
+          <div class="bg-gradient-to-br from-primary/20 to-transparent p-6 rounded-2xl border border-primary/30 card-hover">
+            <div class="text-4xl font-bold text-primary mb-2">8+</div>
+            <div class="text-gray-400">Years Experience</div>
+          </div>
+          <div class="bg-gradient-to-br from-secondary/20 to-transparent p-6 rounded-2xl border border-secondary/30 card-hover">
+            <div class="text-4xl font-bold text-secondary mb-2">50+</div>
+            <div class="text-gray-400">Projects Completed</div>
+          </div>
+          <div class="bg-gradient-to-br from-accent/20 to-transparent p-6 rounded-2xl border border-accent/30 card-hover">
+            <div class="text-4xl font-bold text-accent mb-2">20+</div>
+            <div class="text-gray-400">Technologies</div>
+          </div>
+          <div class="bg-gradient-to-br from-primary/20 to-transparent p-6 rounded-2xl border border-primary/30 card-hover">
+            <div class="text-4xl font-bold text-primary mb-2">100%</div>
+            <div class="text-gray-400">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 bg-darker">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-gradient">Skills & Technologies</span>
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Backend -->
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="0">
+          <i class="fas fa-code text-4xl text-primary mb-3"></i>
+          <div class="text-sm font-medium">C# .NET</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="50">
+          <i class="fab fa-php text-4xl text-secondary mb-3"></i>
+          <div class="text-sm font-medium">PHP</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-database text-4xl text-accent mb-3"></i>
+          <div class="text-sm font-medium">SQL Server</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="150">
+          <i class="fas fa-database text-4xl text-blue-400 mb-3"></i>
+          <div class="text-sm font-medium">PostgreSQL</div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+          <div class="text-sm font-medium">HTML/CSS</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="250">
+          <i class="fab fa-js text-4xl text-yellow-400 mb-3"></i>
+          <div class="text-sm font-medium">JavaScript</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fab fa-bootstrap text-4xl text-purple-500 mb-3"></i>
+          <div class="text-sm font-medium">Bootstrap</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="350">
+          <i class="fab fa-react text-4xl text-cyan-400 mb-3"></i>
+          <div class="text-sm font-medium">React</div>
+        </div>
+
+        <!-- Tools & Others -->
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fab fa-git-alt text-4xl text-red-500 mb-3"></i>
+          <div class="text-sm font-medium">Git</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="450">
+          <i class="fab fa-microsoft text-4xl text-blue-600 mb-3"></i>
+          <div class="text-sm font-medium">Azure</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fas fa-credit-card text-4xl text-green-400 mb-3"></i>
+          <div class="text-sm font-medium">ISO8583</div>
+        </div>
+        <div class="skill-badge bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="550">
+          <i class="fas fa-shield-alt text-4xl text-indigo-400 mb-3"></i>
+          <div class="text-sm font-medium">SNAP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-24 bg-dark">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-gradient">Resume</span>
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Experience -->
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover" data-aos="fade-right">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-briefcase text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold">Experience</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="relative pl-6 border-l-2 border-primary">
+              <div class="absolute -left-3 top-0 w-6 h-6 bg-primary rounded-full"></div>
+              <div class="text-sm text-primary font-semibold">2018 - Present</div>
+              <h4 class="text-lg font-bold text-white">Software Engineer</h4>
+              <p class="text-gray-400">PT. Arranet Indonesia Sejahtera</p>
+            </div>
+            <div class="relative pl-6 border-l-2 border-secondary">
+              <div class="absolute -left-3 top-0 w-6 h-6 bg-secondary rounded-full"></div>
+              <div class="text-sm text-secondary font-semibold">Dec 2017 - Mar 2018</div>
+              <h4 class="text-lg font-bold text-white">Internship Web Developer</h4>
+              <p class="text-gray-400">PT. Blu Data</p>
+            </div>
+            <div class="relative pl-6 border-l-2 border-accent">
+              <div class="absolute -left-3 top-0 w-6 h-6 bg-accent rounded-full"></div>
+              <div class="text-sm text-accent font-semibold">2014 - 2017</div>
+              <h4 class="text-lg font-bold text-white">Freelance Web Developer</h4>
+              <p class="text-gray-400">Self-Employed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover" data-aos="fade-left">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-graduation-cap text-xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold">Education</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="relative pl-6 border-l-2 border-primary">
+              <div class="absolute -left-3 top-0 w-6 h-6 bg-primary rounded-full"></div>
+              <div class="text-sm text-primary font-semibold">2018</div>
+              <h4 class="text-lg font-bold text-white">Bachelor of Computer Science</h4>
+              <p class="text-gray-400">Budi Luhur University</p>
+            </div>
+            <div class="relative pl-6 border-l-2 border-secondary">
+              <div class="absolute -left-3 top-0 w-6 h-6 bg-secondary rounded-full"></div>
+              <div class="text-sm text-secondary font-semibold">2014</div>
+              <h4 class="text-lg font-bold text-white">Software Engineer</h4>
+              <p class="text-gray-400">SMK Bina Informatika</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-darker">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-gradient">Portfolio & Projects</span>
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full"></div>
+      </div>
+
+      <!-- PT. Arranet Projects -->
+      <div class="mb-12" data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          <i class="fas fa-building text-primary mr-3"></i>
+          PT. Arranet Indonesia Sejahtera
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 card-hover" data-aos="zoom-in">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-server text-lg"></i>
+              </div>
+              <h4 class="text-lg font-bold">PPOB Biller API Services</h4>
+            </div>
+            <p class="text-gray-400 text-sm">Realtime Backend APIs using C# .NET Framework with messaging ISO8583 & JSON</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">C#</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">.NET</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">ISO8583</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 card-hover" data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-mobile-alt text-lg"></i>
+              </div>
+              <h4 class="text-lg font-bold">Mini ATM Banking API</h4>
+            </div>
+            <p class="text-gray-400 text-sm">Terminal Management, Terminal Management System, Key Management, Transaction Processing, ISO8583 Messaging</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">C#</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">Azure</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">SQL Server</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PT. Blu Data Projects -->
+      <div data-aos="fade-up">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          <i class="fas fa-building text-secondary mr-3"></i>
+          PT. Blu Data
+        </h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 border border-gray-700 card-hover" data-aos="zoom-in">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center mr-3">
+                <i class="fas fa-shopping-cart text-lg"></i>
+              </div>
+              <h4 class="text-lg font-bold">Kioskberas.com</h4>
+            </div>
+            <p class="text-gray-400 text-sm">E-commerce platform for rice product ordering system</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">PHP</span>
+              <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full">HTML/CSS</span>
+              <span class="px-3 py-1 bg-accent/20 text-accent text-xs rounded-full">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-dark">
     <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-2xl font-semibold mb-6 text-[#D0BFFF]">Skills</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-gray-100">
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">C# .NET Framework & .NET Core</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">PHP (Native, CI, Laravel)</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">SQL Server</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">PostgreSQL</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">HTML, CSS, & JS</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">Git</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">ISO8583 Messaging</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">SNAP</div>
-        <div class="bg-gray-600 rounded-xl p-4 text-center transition transform hover:scale-105 hover:bg-gray-500 duration-300">NSICCS Banking</div>
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-gradient">Get In Touch</span>
+        </h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full"></div>
+        <p class="text-gray-400 mt-6">Feel free to reach out for collaborations or just a friendly chat!</p>
       </div>
-    </div>
-  </section>
 
-  <section id="resume" class="py-16 bg-gray-700" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-2xl font-semibold mb-6 text-[#D0BFFF]">Resume</h3>
-      <div class="space-y-6 text-left">
-        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
-          <h4 class="text-xl font-bold text-[#B2F2BB]">Experience</h4>
-          <ul class="text-gray-200 mt-4 list-disc pl-6">
-            <li>Juli 2018 - Present: <i>Software Engineer</i> at <b>PT. Arranet Indonesia Sejahtera</b></li>
-            <li>Des 2017 - Mar 2018: <i>Internship Web Developer</i> at <b>PT. Blu Data</b></li>
-            <li>2014 - 2017: <i>Freelance Web Developer</i> by <b>Self-Employed or with my friends/teams</b> working some freelance project using PHP Native and Laravel.</li>
-          </ul>
-        </div>
-        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
-          <h4 class="text-xl font-bold text-[#D0BFFF]">Education</h4>
-          <ul class="text-gray-200 mt-4 list-disc pl-6">
-            <li>2018: <i>Bachelor of Computer Science</i>, <b>Budi Luhur University</b></li>
-            <li>2014: <i>Graduated Software Engineer</i>, <b>SMK Bina Informatika</b></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <a href="mailto:fadhly29@gmail.com" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover text-center group" data-aos="zoom-in" data-aos-delay="0">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+            <i class="fas fa-envelope text-2xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">Email</h4>
+          <p class="text-gray-400 text-sm">fadhly29@gmail.com</p>
+        </a>
 
-  <!-- Proyek -->
-  <section id="projects" class="py-16 bg-gray-700" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6">
-      <h3 class="text-2xl font-semibold mb-6 text-[#A5D8FF]">Portfolio & Projects</h3>
-      <div class="space-y-6">
-        <h2>Some Works at PT. Arranet Indonesia Sejahtera</h2>
-        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
-          <h4 class="text-xl font-bold text-[#B2F2BB]">PPOB Biller API Services (On Demand)</h4>
-          <p class="text-gray-200 mt-2">Realtime Backend APIs using C# .NET Framework with messaging ISO8583 & JSON</p>
-        </div>
-        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
-          <h4 class="text-xl font-bold text-[#D0BFFF]">API For Mini ATM Banking Devices (ESA)</h4>
-          <p class="text-gray-200 mt-2">This system includes Terminal Management for managing devices such as block, activation, Whitelist Serial Number Devices, Master Key and Walking Session Key Management, Translating Pinblock, Translating JSON into ISO8583 Messaging, Writes transaction log for monitoring. Also this backend API writes transactions to the databases for Mini ATM.</p>
-        </div>
-      </div>
-      <br>
-      <div class="space-y-6">
-        <h2>Some Works at PT. Blu Data</h2>
-        <div class="bg-gray-800 rounded-xl shadow p-6 border border-gray-600">
-          <h4 class="text-xl font-bold text-[#B2F2BB]">Website Kioskberas.com (2017)</h4>
-          <p class="text-gray-200 mt-2">Making Product Order Website for PT. KIOSKBERAS using PHP, HTML, and CSS.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <a href="https://wa.me/6289616049979" target="_blank" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover text-center group" data-aos="zoom-in" data-aos-delay="100">
+          <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">WhatsApp</h4>
+          <p class="text-gray-400 text-sm">+62 896-1604-9979</p>
+        </a>
 
-  <!-- Kontak -->
-  <section id="contact" class="py-16 bg-gray-800" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-2xl font-semibold mb-4 text-[#B2F2BB]">Contacts</h3>
-      <p class="text-gray-300 mb-6">Feel free to Contact Me:</p>
-      <a href="mailto:fadhly29@gmail.com" class="inline-block bg-[#A5D8FF] text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-[#74c0fc] transition">
-        fadhly29@gmail.com
-      </a>
-      <a href="https://wa.me/6289616049979" class="inline-block bg-[#51CE70] text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-[#72d58b] transition">
-        WhatsApp Me!
-      </a>
+        <a href="https://github.com/fadhly29" target="_blank" class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover text-center group" data-aos="zoom-in" data-aos-delay="200">
+          <div class="w-16 h-16 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+            <i class="fab fa-github text-2xl"></i>
+          </div>
+          <h4 class="font-bold mb-2">GitHub</h4>
+          <p class="text-gray-400 text-sm">@fadhly29</p>
+        </a>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:fadhly29@gmail.com" class="btn-primary px-8 py-4 rounded-full font-semibold text-white relative z-10">
+          <i class="fas fa-paper-plane mr-2"></i>Send Message
+        </a>
+        <a href="https://wa.me/6289616049979" target="_blank" class="px-8 py-4 rounded-full font-semibold bg-green-600 hover:bg-green-700 text-white transition transform hover:scale-105">
+          <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 text-center text-gray-400 text-sm bg-gray-900">
-    &copy; 2025 Fadhly Mahdhy. Dibuat dengan ❤ dan Tailwind CSS serta pastel vibes ✨
+  <footer class="py-8 bg-darker border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+          &copy; 2025 <span class="text-gradient font-semibold">Fadhly Mahdhy</span>. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="https://github.com/fadhly29" target="_blank" class="text-gray-400 hover:text-white transition">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://linkedin.com/in/fadhly29" target="_blank" class="text-gray-400 hover:text-blue-500 transition">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="mailto:fadhly29@gmail.com" class="text-gray-400 hover:text-red-400 transition">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="text-center mt-6 text-gray-500 text-xs">
+        Built with <i class="fas fa-heart text-red-500"></i> using HTML, CSS & Tailwind
+      </div>
+    </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:scale-110 z-50">
+    <i class="fas fa-arrow-up text-white"></i>
+  </button>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true });
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+
+    // Loading Screen
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 500);
+    });
+
+    // Create Particles
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Header background on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-lg');
+      } else {
+        header.classList.remove('shadow-lg');
+      }
+    });
+  </script>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
   </script>
 </body>
 </html>

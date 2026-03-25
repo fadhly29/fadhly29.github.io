@@ -40,8 +40,8 @@ I'm a passionate Software Engineer who loves building scalable systems, automati
 ---
 
 ## 🌐 Connect With Me
-- 💼 LinkedIn: [[Your LinkedIn URL]](https://www.linkedin.com/in/fadhly-mahdhy-1a3709173/)
-- 🌍 Portfolio: [[Your Website URL]](https://fadhly29.github.io/)
+- 💼 LinkedIn: [[Click to my LinkedIn]](https://www.linkedin.com/in/fadhly-mahdhy-1a3709173/)
+- 🌍 Portfolio: [[Click to my Portofolio]](https://fadhly29.github.io/)
 - 📧 Email: fadhly29@gmail.com
 
 ---
